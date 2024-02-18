@@ -1,7 +1,7 @@
 import * as path from "node:path";
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: {
         "lc_doug_walker": "./src/lc_doug_walker.ts",
         "custom_shaders": "./src/custom_shaders.ts"

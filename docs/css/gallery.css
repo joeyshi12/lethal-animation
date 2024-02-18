@@ -45,7 +45,7 @@ a:hover {
     }
     .content {
         padding: 0 16px;
-        .sketch-list {
+        .scene-list {
             .card {
                 background: var(--secondary-background-color);
                 border-radius: 4px;
