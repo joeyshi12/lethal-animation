@@ -2,9 +2,14 @@ import * as path from "node:path";
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.ts",
+    entry: {
+        "lc_doug_walker": "./src/lc_doug_walker.ts",
+        "custom_shaders": "./src/custom_shaders.ts"
+    },
     output: {
         path: path.join(__dirname, "docs"),
+        publicPath: "docs/",
+        filename: "js/[name].js",
         chunkFormat: "array-push",
         hashFunction: "sha256"
     },

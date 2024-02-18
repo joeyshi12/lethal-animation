@@ -5,8 +5,8 @@ import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 async function loadModels(): Promise<GLTF[]> {
     const gltfLoader = new GLTFLoader();
     const [scavengerGltf, microwaveGltf] = await Promise.all([
-        await gltfLoader.loadAsync("models/pointing_scavenger.glb"),
-        await gltfLoader.loadAsync("models/microwave.glb")
+        await gltfLoader.loadAsync("../models/pointing_scavenger.glb"),
+        await gltfLoader.loadAsync("../models/microwave.glb")
     ]);
     scavengerGltf.scene.position.set(-0.3, 0.3, 0);
     microwaveGltf.scene.scale.set(0.7, 0.7, 0.7);

@@ -1,13 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Lethal Animation</title>
-    <style>
-    body {
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-    }
-    </style>
+    <title>Threejs Gallery</title>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Joey Shi"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="icon" href="https://threejs.org/files/favicon.ico">
 </head>
 <body>
-    <script src="/lethal-animation/main.js"></script>
+    <div class="panel">
+        <div class="header">
+            <h2 class="label">Joey's Gallery</h2>
+            <div>
+                <a href="https://joeyshi.xyz">
+                    <span style='font-size: 24px;'>&#8629;</span> Return to portfolio
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <h3 class="label">Sketches</h3>
+            <div class="sketch-list">
+                <div class="card">
+                    <a href="custom_shaders" target="viewer">
+                        <div class="thumbnail">
+                            <img src="https://imgs.search.brave.com/ULykb-cDWcQR3Ba8pA-gYK9e52QDwl2TBXp148_J6PM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLnRoZWdhbWVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjQvMDEv/YW4tYXZlcmFnZS1j/cmV3LWluLWxldGhh/bC1jb21wYW55Lmpw/Zw" loading="lazy">
+                        </div>
+                        <div class="title">custom shaders</div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="lc_doug_walker" target="viewer">
+                        <div class="thumbnail">
+                            <img src="https://imgs.search.brave.com/ULykb-cDWcQR3Ba8pA-gYK9e52QDwl2TBXp148_J6PM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLnRoZWdhbWVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjQvMDEv/YW4tYXZlcmFnZS1j/cmV3LWluLWxldGhh/bC1jb21wYW55Lmpw/Zw" loading="lazy">
+                        </div>
+                        <div class="title">lethal company - doug walker meme</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe id="viewer" name="viewer" allow="fullscreen" style="display: unset;"></iframe>
 </body>
+</html>
