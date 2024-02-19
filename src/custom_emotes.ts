@@ -40,7 +40,7 @@ window.addEventListener('resize', () => {
 const FRAME_PERIOD = 1 / 60;
 let prevTime = 0;
 let mixer: THREE.AnimationMixer;
-let currentClipIndex = 0;
+let currentClipIndex = 2;
 
 function initGui(shayGltf: GLTF) {
     const gui = new GUI();
@@ -86,7 +86,9 @@ function animate(time: number) {
 loadModels().then(([shayGltf]) => {
     scene.add(shayGltf.scene);
     mixer = new THREE.AnimationMixer(shayGltf.scene);
-    mixer.clipAction(shayGltf.animations[currentClipIndex]).reset().play();
+    const action = mixer.clipAction(shayGltf.animations[currentClipIndex]);
+    action.clampWhenFinished = true;
+    action.reset().play();
     initGui(shayGltf);
     animate(0);
 });

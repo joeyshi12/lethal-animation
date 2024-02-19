@@ -3,7 +3,7 @@ import * as path from "node:path";
 export const commonConfig = {
     entry: {
         "lc_doug_walker": "./src/lc_doug_walker.ts",
-        "custom_shaders": "./src/custom_shaders.ts"
+        "custom_emotes": "./src/custom_emotes.ts"
     },
     output: {
         path: path.join(__dirname, "docs"),
