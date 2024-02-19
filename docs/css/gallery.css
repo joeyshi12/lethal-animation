@@ -42,6 +42,9 @@ a:hover {
         padding-left: 16px;
         border-bottom: 1px solid;
         border-color: var(--secondary-text-color);
+        .return-link {
+            padding-bottom: 10px;
+        }
     }
     .content {
         padding: 0 16px;
@@ -51,11 +54,6 @@ a:hover {
                 border-radius: 4px;
                 overflow: hidden;
                 margin-bottom: 16px;
-            }
-            a {
-                .thumbnail img {
-                    max-width: 100%;
-                }
                 .title {
                     font-weight: 500;
                     padding: 8px 10px;
@@ -63,6 +61,10 @@ a:hover {
             }
         }
     }
+}
+
+.thumbnail img {
+    max-width: 100%;
 }
 
 iframe {
