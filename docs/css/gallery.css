@@ -54,7 +54,7 @@ a:hover {
             }
             a {
                 .thumbnail img {
-                    width: 280px;
+                    max-width: 100%;
                 }
                 .title {
                     font-weight: 500;

@@ -37,10 +37,9 @@ const FRAME_PERIOD = 1 / 60;
 let prevTime = 0;
 let mixer: THREE.AnimationMixer;
 let scavengerGltf: GLTF;
-let gui: GUI;
 
 function initGui() {
-    gui = new GUI();
+    const gui = new GUI();
     const suitColorFolder = gui.addFolder("Textures");
     const suitColorOptions = {
         "Orange": createScavengerTextureUpdateCallback("../textures/ScavengerPlayerModel.png"),
