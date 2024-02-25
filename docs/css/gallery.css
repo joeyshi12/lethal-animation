@@ -33,6 +33,7 @@ a:hover {
 .panel {
     display: flex;
     flex-direction: column;
+    height: 100vh;
     margin: 0;
     padding: 0;
     width: 300px;
@@ -48,6 +49,7 @@ a:hover {
     }
     .content {
         padding: 0 16px;
+        overflow-y: auto;
         .scene-list {
             .card {
                 background: var(--secondary-background-color);

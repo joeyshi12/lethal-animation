@@ -12,7 +12,6 @@ scene.add(camera);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setClearColor(0x689DAB);
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.target.set(0, 0.8, 0)
@@ -84,6 +83,9 @@ function animate(time: number) {
 }
 
 loadModels().then(([shayGltf]) => {
+    document.getElementById("loader-container")?.remove();
+    document.body.appendChild(renderer.domElement);
+
     scene.add(shayGltf.scene);
     mixer = new THREE.AnimationMixer(shayGltf.scene);
     const action = mixer.clipAction(shayGltf.animations[currentClipIndex]);
