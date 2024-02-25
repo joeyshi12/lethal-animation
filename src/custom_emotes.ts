@@ -36,8 +36,7 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-const FRAME_PERIOD = 1 / 60;
-let prevTime = 0;
+const clock = new THREE.Clock();
 let mixer: THREE.AnimationMixer;
 let currentClipIndex = 2;
 
@@ -67,18 +66,14 @@ function createPlayEmoteCallback(shayGltf: GLTF, clipIndex: number) {
 async function loadModels(): Promise<GLTF[]> {
     const gltfLoader = new GLTFLoader();
     const [shayGltf] = await Promise.all([
-        await gltfLoader.loadAsync("../models/shay.glb"),
+        gltfLoader.loadAsync("../models/shay.glb"),
     ]);
     return [shayGltf];
 }
 
-function animate(time: number) {
-    const deltaTime = time - prevTime;
-    if (deltaTime > FRAME_PERIOD) {
-        renderer.render(scene, camera);
-        mixer.update(0.015);
-        prevTime = time;
-    }
+function animate() {
+    renderer.render(scene, camera);
+    mixer.update(clock.getDelta());
     requestAnimationFrame(animate);
 }
 
@@ -92,5 +87,5 @@ loadModels().then(([shayGltf]) => {
     action.clampWhenFinished = true;
     action.reset().play();
     initGui(shayGltf);
-    animate(0);
+    animate();
 });

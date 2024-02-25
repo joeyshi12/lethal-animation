@@ -31,9 +31,7 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-const FRAME_PERIOD = 1 / 60;
-
-let prevTime = 0;
+const clock = new THREE.Clock();
 let mixer: THREE.AnimationMixer;
 let scavengerGltf: GLTF;
 
@@ -84,13 +82,9 @@ async function loadModels(): Promise<GLTF[]> {
     return [scavengerGltf, terminalGltf];
 }
 
-function animate(time: number) {
-    const deltaTime = time - prevTime;
-    if (deltaTime > FRAME_PERIOD) {
-        renderer.render(scene, camera);
-        mixer.update(0.015);
-        prevTime = time;
-    }
+function animate() {
+    renderer.render(scene, camera);
+    mixer.update(clock.getDelta());
     requestAnimationFrame(animate);
 }
 
@@ -106,5 +100,5 @@ loadModels().then(([scavenger, terminal]) => {
     mixer.clipAction(clips[0]).play();
 
     initGui()
-    animate(0);
+    animate();
 });
