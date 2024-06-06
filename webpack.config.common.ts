@@ -2,14 +2,24 @@ import * as path from "node:path";
 
 export const commonConfig = {
     entry: {
-        "lc_doug_walker": "./src/lc_doug_walker.ts",
-        "custom_emotes": "./src/custom_emotes.ts"
+        "lc_doug_walker": {
+            import: "./src/lc_doug_walker.ts",
+            dependOn: "three"
+        },
+        "custom_emotes": {
+            import: "./src/custom_emotes.ts",
+            dependOn: "three"
+        },
+        "three": "three"
     },
     output: {
         path: path.join(__dirname, "docs"),
-        filename: "[name]/main.js",
+        filename: "js/[name].js",
         chunkFormat: "array-push",
         hashFunction: "sha256"
+    },
+    optimization: {
+        runtimeChunk: "single"
     },
     performance: {
         hints: false
